@@ -9,5 +9,5 @@ class Queen(Piece):
         self.alliance = alliance
         self.position = position
 
-    def toSting(self):
+    def toString(self):
         return "Q" if self.alliance == "Black" else "q"

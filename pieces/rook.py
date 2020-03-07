@@ -9,5 +9,5 @@ class Rook(Piece):
         self.alliance = alliance
         self.position = position
 
-    def toSting(self):
+    def toString(self):
         return "R" if self.alliance == "Black" else "r"

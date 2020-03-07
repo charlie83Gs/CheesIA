@@ -10,5 +10,5 @@ class Bishop(Piece):
         self.position = position
 
 
-    def toSting(self):
-        pass
+    def toString(self):
+        return "B" if self.alliance == "Black" else "b"

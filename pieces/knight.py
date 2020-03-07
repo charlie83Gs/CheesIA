@@ -9,5 +9,5 @@ class Knight(Piece):
         self.alliance = alliance
         self.position = position
 
-    def toSting(self):
-        return "B" if self.alliance == "Black" else "b"
+    def toString(self):
+        return "N" if self.alliance == "Black" else "n"
