@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b8c6ef1-4cd4-44ab-ba68-ecc8ca5b2908" name="Default Changelist" comment="" />
+    <list default="true" id="7b8c6ef1-4cd4-44ab-ba68-ecc8ca5b2908" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/ChessIA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Play.py" beforeDir="false" afterPath="$PROJECT_DIR$/Play.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/board/Board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board/Board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/board/move.py" beforeDir="false" afterPath="$PROJECT_DIR$/board/move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/board/tile.py" beforeDir="false" afterPath="$PROJECT_DIR$/board/tile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pieces/bishop.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/bishop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pieces/king.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/king.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pieces/knight.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/knight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pieces/nullPiece.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/nullPiece.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pieces/pawn.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/pawn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pieces/piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/piece.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pieces/queen.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/queen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pieces/rook.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/rook.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +34,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -32,7 +57,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="D:/Escritorio/ChessInPy-master" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -60,7 +87,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.PlayChess" />
+        <item itemvalue="Python.Play" />
       </list>
     </recent_temporary>
   </component>
@@ -83,25 +110,30 @@
     </state>
     <state x="588" y="187" key="FileChooserDialogImpl/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583458805200" />
     <state x="588" y="187" key="FileChooserDialogImpl/78.0.1458.864@78.0.1458.864" timestamp="1583459614907" />
-    <state width="1437" height="224" key="GridCell.Tab.0.bottom" timestamp="1583462793030">
+    <state width="1437" height="224" key="GridCell.Tab.0.bottom" timestamp="1583547375124">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="224" key="GridCell.Tab.0.bottom/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583462793030" />
-    <state width="1437" height="224" key="GridCell.Tab.0.center" timestamp="1583462793030">
+    <state width="1437" height="224" key="GridCell.Tab.0.bottom/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583547375124" />
+    <state width="1437" height="224" key="GridCell.Tab.0.center" timestamp="1583547375123">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="224" key="GridCell.Tab.0.center/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583462793030" />
-    <state width="1437" height="224" key="GridCell.Tab.0.left" timestamp="1583462793030">
+    <state width="1437" height="224" key="GridCell.Tab.0.center/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583547375123" />
+    <state width="1437" height="224" key="GridCell.Tab.0.left" timestamp="1583547375123">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="224" key="GridCell.Tab.0.left/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583462793030" />
-    <state width="1437" height="224" key="GridCell.Tab.0.right" timestamp="1583462793030">
+    <state width="1437" height="224" key="GridCell.Tab.0.left/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583547375123" />
+    <state width="1437" height="224" key="GridCell.Tab.0.right" timestamp="1583547375124">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="224" key="GridCell.Tab.0.right/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583462793030" />
-    <state x="316" y="74" key="SettingsEditor" timestamp="1583459639738">
+    <state width="1437" height="224" key="GridCell.Tab.0.right/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583547375124" />
+    <state x="316" y="74" key="SettingsEditor" timestamp="1583463246319">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
+    <state x="316" y="74" key="SettingsEditor/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583463246319" />
     <state x="316" y="74" key="SettingsEditor/78.0.1458.864@78.0.1458.864" timestamp="1583459639738" />
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2" timestamp="1583541896932">
+      <screen x="78" y="0" width="1458" height="864" />
+    </state>
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583541896932" />
   </component>
 </project>

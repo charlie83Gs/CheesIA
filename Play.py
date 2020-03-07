@@ -1,9 +1,14 @@
 import pygame
+from board.Board import Board
 
 pygame.init()
 gameDisplay = pygame.display.set_mode((800,800))
 pygame.display.set_caption("ChessIA")
 clock =  pygame.time.Clock()
+
+Board = Board()
+Board.createBoard()
+Board.printBoard()
 
 
 ##Ciclo del juego , mientras quitGame sea falso la ventana se mantiene abierta##
