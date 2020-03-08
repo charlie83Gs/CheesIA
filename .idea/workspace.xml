@@ -2,17 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b8c6ef1-4cd4-44ab-ba68-ecc8ca5b2908" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BoardFiles/pta0.cfl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoardFiles/pta1.cfl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/BB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/BK.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/BN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/BP.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/BQ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/BR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/WB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/WK.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/WN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/WP.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/WQ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/WR.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoardFiles/pta0.cfl" beforeDir="false" afterPath="$PROJECT_DIR$/BoardFiles/pta0.cfl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoardFiles/pta1.cfl" beforeDir="false" afterPath="$PROJECT_DIR$/BoardFiles/pta1.cfl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Play.py" beforeDir="false" afterPath="$PROJECT_DIR$/Play.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/board/Board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board/Board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pieces/bishop.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/bishop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pieces/king.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/king.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pieces/knight.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/knight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pieces/pawn.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/pawn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pieces/queen.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/queen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pieces/rook.py" beforeDir="false" afterPath="$PROJECT_DIR$/pieces/rook.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,53 +111,61 @@
       <option name="project" value="LOCAL" />
       <updated>1583547453840</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Loading board from files">
+      <created>1583623553840</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583623553841</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Adding boar tiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding boar tiles" />
+    <MESSAGE value="Loading board from files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Loading board from files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="538" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583604946904">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state x="538" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583604946904" />
-    <state x="463" y="26" key="CommitChangelistDialog2" timestamp="1583547453014">
+    <state x="463" y="26" key="CommitChangelistDialog2" timestamp="1583623553112">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state x="463" y="26" key="CommitChangelistDialog2/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583547453014" />
+    <state x="463" y="26" key="CommitChangelistDialog2/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583623553112" />
     <state x="588" y="187" key="FileChooserDialogImpl" timestamp="1583459614907">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state x="588" y="187" key="FileChooserDialogImpl/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583458805200" />
     <state x="588" y="187" key="FileChooserDialogImpl/78.0.1458.864@78.0.1458.864" timestamp="1583459614907" />
-    <state width="1437" height="235" key="GridCell.Tab.0.bottom" timestamp="1583623423236">
+    <state width="1437" height="235" key="GridCell.Tab.0.bottom" timestamp="1583630298782">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="235" key="GridCell.Tab.0.bottom/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583623423236" />
-    <state width="1437" height="235" key="GridCell.Tab.0.center" timestamp="1583623423235">
+    <state width="1437" height="235" key="GridCell.Tab.0.bottom/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583630298782" />
+    <state width="1437" height="235" key="GridCell.Tab.0.center" timestamp="1583630298782">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="235" key="GridCell.Tab.0.center/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583623423235" />
-    <state width="1437" height="235" key="GridCell.Tab.0.left" timestamp="1583623423235">
+    <state width="1437" height="235" key="GridCell.Tab.0.center/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583630298782" />
+    <state width="1437" height="235" key="GridCell.Tab.0.left" timestamp="1583630298782">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="235" key="GridCell.Tab.0.left/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583623423235" />
-    <state width="1437" height="235" key="GridCell.Tab.0.right" timestamp="1583623423235">
+    <state width="1437" height="235" key="GridCell.Tab.0.left/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583630298782" />
+    <state width="1437" height="235" key="GridCell.Tab.0.right" timestamp="1583630298782">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="235" key="GridCell.Tab.0.right/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583623423235" />
+    <state width="1437" height="235" key="GridCell.Tab.0.right/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583630298782" />
     <state x="316" y="74" key="SettingsEditor" timestamp="1583463246319">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state x="316" y="74" key="SettingsEditor/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583463246319" />
     <state x="316" y="74" key="SettingsEditor/78.0.1458.864@78.0.1458.864" timestamp="1583459639738" />
-    <state x="400" y="165" key="Vcs.Push.Dialog.v2" timestamp="1583623526601">
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2" timestamp="1583623555423">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state x="400" y="165" key="Vcs.Push.Dialog.v2/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583623526601" />
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583623555423" />
     <state x="470" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1583622115461">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
