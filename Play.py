@@ -1,13 +1,18 @@
 import pygame
 from board.Board import Board
+from board.move import Move
+from playsTree import DesicionTree
+
+#initiate tree
+tree = DesicionTree(5)
 
 pygame.init()
-gameDisplay = pygame.display.set_mode((800,800))
+gameDisplay = pygame.display.set_mode((1000,800))
 pygame.display.set_caption("ChessIA")
 clock =  pygame.time.Clock()
 
 Board = Board()
-Board.createBoard('pta1')
+Board.createBoard('pta0')
 #Board.printBoard()
 
 allTiles = []
@@ -122,6 +127,12 @@ while not quitGame:
             quitGame = True
             pygame.quit()
             quit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            print("Click")
+        if event.type == pygame.MOUSEMOTION and not selectedImage == None:
+            pass
+        if event.type == pygame.MOUSEBUTTONUP:
+            pass
 
 
 

@@ -2,23 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b8c6ef1-4cd4-44ab-ba68-ecc8ca5b2908" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ChessArt/BB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/BK.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/BN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/BP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/BQ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/BR.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/WB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/WK.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/WN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/WP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/WQ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessArt/WR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessArt/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/player/boardEvaluator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/playsTree.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/button_theming_test_theme.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/documentation_theme.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/guiopedia_theme.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/quick_theme.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/theme_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/theme_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/theme_3.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BoardFiles/pta0.cfl" beforeDir="false" afterPath="$PROJECT_DIR$/BoardFiles/pta0.cfl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BoardFiles/pta1.cfl" beforeDir="false" afterPath="$PROJECT_DIR$/BoardFiles/pta1.cfl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Play.py" beforeDir="false" afterPath="$PROJECT_DIR$/Play.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/board/Board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board/Board.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +58,58 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="D:/Escritorio/ChessInPy-master" />
+    <property name="last_opened_file_path" value="D:/Escritorio/ChessIA-Project-Charlie" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Wilson\PycharmProjects\ChessIA\player" />
+      <recent name="C:\Users\Wilson\PycharmProjects\ChessIA" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Play">
+    <configuration name="Begin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ChessIA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Begin.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Home" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ChessIA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Home.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Play" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ChessIA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,6 +134,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Play" />
+        <item itemvalue="Python.Home" />
+        <item itemvalue="Python.Begin" />
       </list>
     </recent_temporary>
   </component>
@@ -118,54 +164,62 @@
       <option name="project" value="LOCAL" />
       <updated>1583623553841</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Show the pieces on the screem">
+      <created>1583630371933</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583630371933</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Adding boar tiles" />
     <MESSAGE value="Loading board from files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Loading board from files" />
+    <MESSAGE value="Show the pieces on the screem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show the pieces on the screem" />
   </component>
   <component name="WindowStateProjectService">
     <state x="538" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583604946904">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state x="538" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583604946904" />
-    <state x="463" y="26" key="CommitChangelistDialog2" timestamp="1583623553112">
+    <state x="463" y="26" key="CommitChangelistDialog2" timestamp="1583630371159">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state x="463" y="26" key="CommitChangelistDialog2/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583623553112" />
-    <state x="588" y="187" key="FileChooserDialogImpl" timestamp="1583459614907">
+    <state x="463" y="26" key="CommitChangelistDialog2/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583630371159" />
+    <state x="588" y="187" key="FileChooserDialogImpl" timestamp="1584373245716">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state x="588" y="187" key="FileChooserDialogImpl/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583458805200" />
+    <state x="588" y="187" key="FileChooserDialogImpl/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1584373245716" />
     <state x="588" y="187" key="FileChooserDialogImpl/78.0.1458.864@78.0.1458.864" timestamp="1583459614907" />
-    <state width="1437" height="235" key="GridCell.Tab.0.bottom" timestamp="1583630298782">
+    <state width="1437" height="235" key="GridCell.Tab.0.bottom" timestamp="1584374355336">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="235" key="GridCell.Tab.0.bottom/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583630298782" />
-    <state width="1437" height="235" key="GridCell.Tab.0.center" timestamp="1583630298782">
+    <state width="1437" height="235" key="GridCell.Tab.0.bottom/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1584374355336" />
+    <state width="1437" height="235" key="GridCell.Tab.0.center" timestamp="1584374355336">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="235" key="GridCell.Tab.0.center/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583630298782" />
-    <state width="1437" height="235" key="GridCell.Tab.0.left" timestamp="1583630298782">
+    <state width="1437" height="235" key="GridCell.Tab.0.center/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1584374355336" />
+    <state width="1437" height="235" key="GridCell.Tab.0.left" timestamp="1584374355336">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="235" key="GridCell.Tab.0.left/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583630298782" />
-    <state width="1437" height="235" key="GridCell.Tab.0.right" timestamp="1583630298782">
+    <state width="1437" height="235" key="GridCell.Tab.0.left/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1584374355336" />
+    <state width="1437" height="235" key="GridCell.Tab.0.right" timestamp="1584374355336">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state width="1437" height="235" key="GridCell.Tab.0.right/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583630298782" />
+    <state width="1437" height="235" key="GridCell.Tab.0.right/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1584374355336" />
     <state x="316" y="74" key="SettingsEditor" timestamp="1583463246319">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
     <state x="316" y="74" key="SettingsEditor/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583463246319" />
     <state x="316" y="74" key="SettingsEditor/78.0.1458.864@78.0.1458.864" timestamp="1583459639738" />
-    <state x="400" y="165" key="Vcs.Push.Dialog.v2" timestamp="1583623555423">
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2" timestamp="1583630373530">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
-    <state x="400" y="165" key="Vcs.Push.Dialog.v2/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583623555423" />
+    <state x="400" y="165" key="Vcs.Push.Dialog.v2/78.0.1458.864/1920.0.1366.728@78.0.1458.864" timestamp="1583630373530" />
     <state x="470" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1583622115461">
       <screen x="78" y="0" width="1458" height="864" />
     </state>
