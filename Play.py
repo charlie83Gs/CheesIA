@@ -12,7 +12,7 @@ pygame.display.set_caption("ChessIA")
 clock =  pygame.time.Clock()
 
 Board = Board()
-Board.createBoard('pta0')
+Board.createBoard('pta1')
 #Board.printBoard()
 
 allTiles = []
@@ -127,11 +127,35 @@ while not quitGame:
             quitGame = True
             pygame.quit()
             quit()
+
         if event.type == pygame.MOUSEBUTTONDOWN:
-            print("Click")
+            ##print("Click Donw")
+            if selectedImage==None:
+                mx, my = pygame.mouse.get_pos()
+                for piece in range(len(allPieces)):
+                    if allPieces[piece][2].alliance == currentPlayer:
+                        ##print(piece)
+                        ##print('Is current player')
+                        if allPieces[piece][1][0] < mx < allPieces[piece][1][0] + 100:
+                            if allPieces[piece][1][1] < my < allPieces[piece][1][1] + 100:
+                                ##Se decide cual es la pieza que se toco
+                                selectedImage = piece
+                                prevx = allPieces[piece][1][0]
+                                prevy = allPieces[piece][1][1]
+
+                                #print('Select piece: ')
+                                #print(allPieces[selectedImage][2].toString())
+                                #print(1+prevx//100) #--X
+                                #print(1+prevy//100) #--Y
+
+
+        #Si se selecciono una piesa
         if event.type == pygame.MOUSEMOTION and not selectedImage == None:
+            #print('Do nothing')
             pass
+
         if event.type == pygame.MOUSEBUTTONUP:
+            ##print("Click Up")
             pass
 
 

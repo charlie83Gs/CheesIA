@@ -30,7 +30,7 @@ class Board:
             if line[0] != '#':
                 if line != '\n':
                     if line[0] == 'W' or line[0] == 'B' :
-                        self.currentPlayer = line
+                        self.currentPlayer = line[0:5]
                     else:
                         for x in range(2,18):
                             if(line[x] != '|'):
