@@ -12,7 +12,7 @@ pygame.display.set_caption("ChessIA")
 clock =  pygame.time.Clock()
 
 Board = Board()
-Board.createBoard('pta1')
+Board.createBoard('pta0')
 #Board.printBoard()
 
 allTiles = []
@@ -148,11 +148,23 @@ while not quitGame:
                                 #print(1+prevx//100) #--X
                                 #print(1+prevy//100) #--Y
 
+                                selectedLegals = allPieces[selectedImage][2].calculateLegalMoves(Board)
+                                for legals in selectedLegals:
+                                    resetColors.append([legals, allTiles[legals][0]])
+
+
+                                    if allTiles[legals][0] == (66,134,244):
+                                        allTiles[legals][0] = (135, 46, 40)
+                                    else:
+                                        allTiles[legals][0] = (183, 65, 56)
+
 
         #Si se selecciono una piesa
         if event.type == pygame.MOUSEMOTION and not selectedImage == None:
             #print('Do nothing')
-            pass
+            prevy = 0
+            prevx = 0
+            selectedImage = None
 
         if event.type == pygame.MOUSEBUTTONUP:
             ##print("Click Up")

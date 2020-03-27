@@ -13,6 +13,8 @@ class Board:
 
     ##Lista que almacena todas las piezas del tablero
     gameTiles = {}
+    enPassPawn = None
+    enPassPawnBehind = None
     ##Jugador que inicia jugando
     currentPlayer = None
 
