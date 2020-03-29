@@ -12,12 +12,23 @@ pygame.display.set_caption("ChessIA")
 clock =  pygame.time.Clock()
 
 Board = Board()
-Board.createBoard('pta0')
+Board.createBoard('pta1')
 #Board.printBoard()
 
 allTiles = []
 allPieces = []
 currentPlayer = Board.currentPlayer
+
+black = (0, 0, 0)
+white = (255, 255, 255)
+blue = (0, 0, 128)
+red = (200, 0, 0)
+purple = (102, 0, 102)
+light_gray = ((150,150,150))
+midle_gray =((120,120,120))
+dark_gray = ((70,70,70))
+
+
 
 
 def createSqParams():
@@ -47,16 +58,12 @@ def drawChessPieces():
     color = 0
     width = 100
     height = 100
-    black = (0,0,0)
-    white = (255, 255, 255)
-    blue = (0, 0, 128)
-    red = (200, 0, 0)
-    purple = (102, 0, 102)
     number = 0
+
     for _ in range(8):
         for _ in range(8):
             if color % 2 == 0:
-                squares(xpos, ypos, width, height, blue)
+                squares(xpos, ypos, width, height, dark_gray)
                 if not Board.gameTiles[number].pieceOnTile.toString() == "-":
                     img = pygame.image.load(
                         "./ChessArt/" + Board.gameTiles[number].pieceOnTile.alliance[0].upper() +
@@ -66,7 +73,7 @@ def drawChessPieces():
                     allPieces.append([img, [xpos, ypos], Board.gameTiles[number].pieceOnTile])
                 xpos += 100
             else:
-                squares(xpos, ypos, width, height, red)
+                squares(xpos, ypos, width, height, white)
                 if not Board.gameTiles[number].pieceOnTile.toString() == "-":
                     img = pygame.image.load(
                         "./ChessArt/" + Board.gameTiles[number].pieceOnTile.alliance[0].upper() +
@@ -129,7 +136,6 @@ while not quitGame:
             quit()
 
         if event.type == pygame.MOUSEBUTTONDOWN:
-            ##print("Click Donw")
             if selectedImage==None:
                 mx, my = pygame.mouse.get_pos()
                 for piece in range(len(allPieces)):
@@ -153,27 +159,34 @@ while not quitGame:
                                     resetColors.append([legals, allTiles[legals][0]])
 
 
-                                    if allTiles[legals][0] == (66,134,244):
-                                        allTiles[legals][0] = (135, 46, 40)
+                                    if allTiles[legals][0] == dark_gray:
+                                        allTiles[legals][0] = midle_gray
                                     else:
-                                        allTiles[legals][0] = (183, 65, 56)
+                                        allTiles[legals][0] = light_gray
 
 
         #Si se selecciono una piesa
         if event.type == pygame.MOUSEMOTION and not selectedImage == None:
-            #print('Do nothing')
-            prevy = 0
-            prevx = 0
-            selectedImage = None
+            mx, my = pygame.mouse.get_pos()
+            if mx<800:
+                allPieces[selectedImage][1][0] = mx-50
+                allPieces[selectedImage][1][1] = my-50
+
 
         if event.type == pygame.MOUSEBUTTONUP:
-            ##print("Click Up")
-            pass
+            for resets in resetColors:
+                allTiles[resets[0]][0] = resets[1]
+
+            try:
+                pass
+            except:
+                pass
 
 
 
 
     gameDisplay.fill((255, 255, 255))
+    pygame.draw.rect(gameDisplay, dark_gray, [800, 0, 2, 800])
 
     for info in allTiles:
         pygame.draw.rect(gameDisplay, info[0], info[1])
