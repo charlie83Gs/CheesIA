@@ -6,22 +6,25 @@ from player.minimax import Minimax
 from playsTree import DesicionTree
 
 #initiate tree
-tree = DesicionTree(5)
+tree = DesicionTree(3)
 
 
 pygame.init()
-gameDisplay = pygame.display.set_mode((1000, 800))
+gameDisplay = pygame.display.set_mode((1100, 825))
 pygame.display.set_caption("PyChess")
 clock = pygame.time.Clock()
-
 firstBoard = chessBoard.Board()
 firstBoard.createBoard('pta1')
 # firstBoard.printBoard()
 
 allTiles = []
 allPieces = []
+ActionsList = []
+axis = ["a", "b", "c","d", "e", "f", "g", "h"]
+play = pygame.image.load("./ChessArt/Buttons/Button_play.png")
+log = pygame.image.load("./ChessArt/Buttons/Button_view.png")
 currentPlayer = firstBoard.currentPlayer
-
+Move = ''
 black = (0, 0, 0)
 white = (255, 255, 255)
 blue = (0, 0, 128)
@@ -30,6 +33,8 @@ purple = (102, 0, 102)
 light_gray = ((150,150,150))
 midle_gray =((120,120,120))
 dark_gray = ((70,70,70))
+
+font = pygame.font.Font(None, 32)
 
 def createSqParams():
     allSqRanges = []
@@ -54,7 +59,7 @@ def squares(x, y, w, h, color):
 
 def drawChessPieces():
     xpos = 0
-    ypos = 0
+    ypos = 25
     color = 0
     width = 100
     height = 100
@@ -91,7 +96,7 @@ def drawChessPieces():
 def updateChessPieces():
 
     xpos = 0
-    ypos = 0
+    ypos = 25
     number = 0
     newPieces = []
 
@@ -117,12 +122,16 @@ allSqParams = createSqParams()
 drawChessPieces()
 
 
+
 selectedImage = None
 selectedLegals = None
 resetColors = []
 quitGame = False
 mx, my = pygame.mouse.get_pos()
 prevx, prevy = [0,0]
+
+
+
 while not quitGame:
 
     for event in pygame.event.get():
@@ -137,7 +146,6 @@ while not quitGame:
             if selectedImage == None:
                 mx, my = pygame.mouse.get_pos()
                 for piece in range(len(allPieces)):
-
                     if allPieces[piece][2].alliance == currentPlayer:
 
                         if allPieces[piece][1][0] < mx < allPieces[piece][1][0]+100:
@@ -161,6 +169,12 @@ while not quitGame:
                                         allTiles[legals][0] = midle_gray
                                     else:
                                         allTiles[legals][0] = light_gray
+                if 825 < mx < 1025:
+                    if 700 < my < 778 and Move!= '':
+                        print(Move)
+                    if 275 < my < 353:
+                        print('View')
+
 
 
         if event.type == pygame.MOUSEMOTION and not selectedImage == None:
@@ -176,9 +190,6 @@ while not quitGame:
                 allTiles[resets[0]][0] = resets[1]
 
             try:
-
-
-
                 pieceMoves = allPieces[selectedImage][2].calculateLegalMoves(firstBoard)
                 legal = False
                 theMove = 0
@@ -243,14 +254,60 @@ while not quitGame:
             except:
                 pass
 
-            prevy = 0
+            prevy = 25
             prevx = 0
             selectedImage = None
 
         #print(event)
 
+        if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    print(Move)
+                    Move = ''
+                elif event.key == pygame.K_BACKSPACE:
+                    Move = Move[:-1]
+                else:
+                    Move += event.unicode
+
     gameDisplay.fill((255, 255, 255))
-    pygame.draw.rect(gameDisplay, dark_gray, [800, 0, 2, 800])
+    pygame.draw.rect(gameDisplay, dark_gray, [800, 25, 2, 800])
+
+
+
+
+    #Axix XY
+    n = 40
+    m = 1
+    for x in axis:
+        img = pygame.image.load("./ChessArt/xy/"+x+".png")
+        img2 = pygame.image.load("./ChessArt/xy/"+str(m)+".png")
+        gameDisplay.blit(img, (n, 0))
+        gameDisplay.blit(img2, (803, n+25))
+        n += 100
+        m+=1
+
+
+    #Buttons
+
+    gameDisplay.blit(play, (875, 700))
+    gameDisplay.blit(log, (875, 275))
+
+
+    #Input_Text
+    text = font.render('Input a valid move', True, black)
+    textRect = text.get_rect()
+    textRect.center=(950,600)
+    gameDisplay.blit(text, textRect)
+
+
+
+    input_box = pygame.Rect(850, 625, 200, 50)
+    txt_surface = font.render(Move, True, black)
+    gameDisplay.blit(txt_surface, (input_box.x + 5, input_box.y + 5))
+    pygame.draw.rect(gameDisplay, black, input_box, 2)
+
+
+
 
     for info in allTiles:
         pygame.draw.rect(gameDisplay, info[0], info[1])

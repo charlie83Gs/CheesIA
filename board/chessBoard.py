@@ -13,7 +13,7 @@ class Board:
     gameTiles = {}
     enPassPawn = None
     enPassPawnBehind = None
-    currentPlayer = "White"
+    currentPlayer = ""
 
     def __init__(self):
         pass
@@ -48,7 +48,7 @@ class Board:
                 if line != '\n':
                     if line[0] == 'W' or line[0] == 'B' :
                         pass
-                        #self.currentPlayer = line[0:5]
+                        self.currentPlayer = line[0:5]
                     else:
                         for x in range(2,18):
                             if(line[x] != '|'):
