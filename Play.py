@@ -1,9 +1,11 @@
 import pygame
+import os
 
 from board import chessBoard
 from board.move import Move
 from player.minimax import Minimax
 from playsTree import DesicionTree
+
 
 #initiate tree
 tree = DesicionTree(3)
@@ -23,6 +25,7 @@ ActionsList = []
 axis = ["a", "b", "c","d", "e", "f", "g", "h"]
 play = pygame.image.load("./ChessArt/Buttons/Button_play.png")
 log = pygame.image.load("./ChessArt/Buttons/Button_view.png")
+help = pygame.image.load("./ChessArt/Buttons/Button_help.png")
 currentPlayer = firstBoard.currentPlayer
 Move = ''
 black = (0, 0, 0)
@@ -35,6 +38,7 @@ midle_gray =((120,120,120))
 dark_gray = ((70,70,70))
 
 font = pygame.font.Font(None, 32)
+logFileName = ''
 
 def createSqParams():
     allSqRanges = []
@@ -122,6 +126,21 @@ allSqParams = createSqParams()
 drawChessPieces()
 
 
+def auxWindow(i):
+    if i==0:
+        fileName = "./BoardFiles/Help/help.txt"
+        os.system("start " + fileName)
+    else:
+        fileName = "./BoardFiles/Log/"+logFileName+".txt"
+        os.system("start " + fileName)
+
+
+
+
+def saveLog():
+    pass
+
+
 
 selectedImage = None
 selectedLegals = None
@@ -170,10 +189,16 @@ while not quitGame:
                                     else:
                                         allTiles[legals][0] = light_gray
                 if 825 < mx < 1025:
-                    if 700 < my < 778 and Move!= '':
-                        print(Move)
                     if 275 < my < 353:
-                        print('View')
+                        saveLog()
+                        auxWindow(1)
+                if 700 < my < 778:
+                    if 840 < mx < 1017 and Move != '':
+                        ActionsList.append(Move)
+                        Move=''
+                        print(ActionsList)
+                    if 1000 < mx < 1062:
+                        auxWindow(0)
 
 
 
@@ -254,7 +279,7 @@ while not quitGame:
             except:
                 pass
 
-            prevy = 25
+            prevy = 0
             prevx = 0
             selectedImage = None
 
@@ -288,26 +313,46 @@ while not quitGame:
 
 
     #Buttons
-
-    gameDisplay.blit(play, (875, 700))
+    gameDisplay.blit(play, (840, 700))
+    gameDisplay.blit(help, (1000, 700))
     gameDisplay.blit(log, (875, 275))
 
 
-    #Input_Text
+
+    #Text
     text = font.render('Input a valid move', True, black)
     textRect = text.get_rect()
     textRect.center=(950,600)
     gameDisplay.blit(text, textRect)
 
 
-
+    #Input move
     input_box = pygame.Rect(850, 625, 200, 50)
     txt_surface = font.render(Move, True, black)
-    gameDisplay.blit(txt_surface, (input_box.x + 5, input_box.y + 5))
+    gameDisplay.blit(txt_surface, (input_box.x + 5, input_box.y + 10))
     pygame.draw.rect(gameDisplay, black, input_box, 2)
 
-
-
+    # log of moves
+    log_box = pygame.Rect(850, 100, 200, 150)
+    if len(ActionsList)>=3:
+        txt_log_surface_1 = font.render(ActionsList[-1], True, black)
+        txt_log_surface_2 = font.render(ActionsList[-2], True, black)
+        txt_log_surface_3 = font.render(ActionsList[-3], True, black)
+        gameDisplay.blit(txt_log_surface_3, (log_box.x + 5, log_box.y + 5))
+        gameDisplay.blit(txt_log_surface_2, (log_box.x + 5, log_box.y + 45))
+        gameDisplay.blit(txt_log_surface_1, (log_box.x + 5, log_box.y + 85))
+    elif len(ActionsList)== 2:
+        txt_log_surface_1 = font.render(ActionsList[-1], True, black)
+        txt_log_surface_2 = font.render(ActionsList[-2], True, black)
+        gameDisplay.blit(txt_log_surface_2, (log_box.x + 5, log_box.y + 5))
+        gameDisplay.blit(txt_log_surface_1, (log_box.x + 5, log_box.y + 45))
+    elif len(ActionsList)== 1:
+        txt_log_surface_1 = font.render(ActionsList[-1], True, black)
+        gameDisplay.blit(txt_log_surface_1, (log_box.x + 5, log_box.y + 5))
+    else:
+        txt_log_surface = font.render(' ', True, black)
+        gameDisplay.blit(txt_log_surface, (log_box.x + 5, log_box.y + 5))
+    pygame.draw.rect(gameDisplay, black, log_box, 2)
 
     for info in allTiles:
         pygame.draw.rect(gameDisplay, info[0], info[1])
@@ -319,6 +364,9 @@ while not quitGame:
 
     pygame.display.update()
     clock.tick(60)
+
+
+
 
 
 
