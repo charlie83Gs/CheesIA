@@ -63,20 +63,22 @@ class DesicionTree:
             #extra check for move validity
             if not isinstance(newboard, bool):
                 minmaxNode = self.getNextMove(newboard,alpha,beta,level+1)
+                if(minmaxNode == None):
+                    continue
                 newNode = Node(newboard,minmaxNode.value)
                 if(self.isMax(level)):
                     selectedNode = self.getMaxNode(selectedNode, newNode)
                     maxEva = max(maxEva, selectedNode.value)
                     alpha = max(alpha, maxEva)
                     if (beta <= alpha):
-                        print("prunned")
+                        #print("prunned")
                         break  
                 else:
                     selectedNode = self.getMinNode(selectedNode, newNode)
                     minEva = min(minEva, selectedNode.value)
                     beta = min(beta, minEva)
                     if (beta <= alpha):
-                        print("prunned")
+                        #print("prunned")
                         break  
 
         return selectedNode
