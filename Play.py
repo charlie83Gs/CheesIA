@@ -1,9 +1,11 @@
 import pygame
+import os
 
 from board import chessBoard
 from board.move import Move
 from player.minimax import Minimax
 from playsTree import DesicionTree
+
 
 #initiate tree
 tree = DesicionTree(3)
@@ -13,14 +15,30 @@ pygame.init()
 gameDisplay = pygame.display.set_mode((1100, 825))
 pygame.display.set_caption("PyChess")
 clock = pygame.time.Clock()
-
 firstBoard = chessBoard.Board()
 firstBoard.createBoard('pta1')
 # firstBoard.printBoard()
 
 allTiles = []
 allPieces = []
+ActionsList = []
+axis = ["a", "b", "c","d", "e", "f", "g", "h"]
+play = pygame.image.load("./ChessArt/Buttons/Button_play.png")
+log = pygame.image.load("./ChessArt/Buttons/Button_view.png")
+help = pygame.image.load("./ChessArt/Buttons/Button_help.png")
 currentPlayer = firstBoard.currentPlayer
+Moves = ''
+black = (0, 0, 0)
+white = (255, 255, 255)
+blue = (0, 0, 128)
+red = (200, 0, 0)
+purple = (102, 0, 102)
+light_gray = ((150,150,150))
+midle_gray =((120,120,120))
+dark_gray = ((70,70,70))
+
+font = pygame.font.Font(None, 32)
+logFileName = ''
 
 def createSqParams():
     allSqRanges = []
@@ -45,7 +63,7 @@ def squares(x, y, w, h, color):
 
 def drawChessPieces():
     xpos = 0
-    ypos = 0
+    ypos = 25
     color = 0
     width = 100
     height = 100
@@ -55,7 +73,7 @@ def drawChessPieces():
     for _ in range(8):
         for _ in range(8):
             if color % 2 == 0:
-                squares(xpos, ypos, width, height, white)
+                squares(xpos, ypos, width, height, dark_gray)
                 if not firstBoard.gameTiles[number].pieceOnTile.toString() == "-":
                     img = pygame.image.load("./ChessArt/" + firstBoard.gameTiles[number].pieceOnTile.alliance[0].upper() + firstBoard.gameTiles[
                         number].pieceOnTile.toString().upper() + ".png")
@@ -63,7 +81,7 @@ def drawChessPieces():
                     allPieces.append([img, [xpos, ypos], firstBoard.gameTiles[number].pieceOnTile])
                 xpos += 100
             else:
-                squares(xpos, ypos, width, height, black)
+                squares(xpos, ypos, width, height, white)
                 if not firstBoard.gameTiles[number].pieceOnTile.toString() == "-":
                     img = pygame.image.load("./ChessArt/" + firstBoard.gameTiles[number].pieceOnTile.alliance[0].upper() + firstBoard.gameTiles[
                         number].pieceOnTile.toString().upper() + ".png")
@@ -82,7 +100,7 @@ def drawChessPieces():
 def updateChessPieces():
 
     xpos = 0
-    ypos = 0
+    ypos = 25
     number = 0
     newPieces = []
 
@@ -108,12 +126,31 @@ allSqParams = createSqParams()
 drawChessPieces()
 
 
+def auxWindow(i):
+    if i==0:
+        fileName = "./BoardFiles/Help/help.txt"
+        os.system("start " + fileName)
+    else:
+        fileName = "./BoardFiles/Log/"+logFileName+".txt"
+        os.system("start " + fileName)
+
+
+
+
+def saveLog():
+    pass
+
+
+
 selectedImage = None
 selectedLegals = None
 resetColors = []
 quitGame = False
 mx, my = pygame.mouse.get_pos()
 prevx, prevy = [0,0]
+
+
+
 while not quitGame:
 
     for event in pygame.event.get():
@@ -128,7 +165,6 @@ while not quitGame:
             if selectedImage == None:
                 mx, my = pygame.mouse.get_pos()
                 for piece in range(len(allPieces)):
-
                     if allPieces[piece][2].alliance == currentPlayer:
 
                         if allPieces[piece][1][0] < mx < allPieces[piece][1][0]+100:
@@ -136,16 +172,34 @@ while not quitGame:
                                 selectedImage = piece
                                 prevx = allPieces[piece][1][0]
                                 prevy = allPieces[piece][1][1]
+                                                                
+                                #print('Select piece: ')
+                                #print(allPieces[selectedImage][2].toString())
+                                #print(1+prevx//100) #--X
+                                #print(1+prevy//100) #--Y
+
 
                                 selectedLegals = allPieces[selectedImage][2].calculateLegalMoves(firstBoard)
                                 for legals in selectedLegals:
                                     resetColors.append([legals, allTiles[legals][0]])
 
 
-                                    if allTiles[legals][0] == (66,134,244):
-                                        allTiles[legals][0] = (135, 46, 40)
+                                    if allTiles[legals][0] == dark_gray:
+                                        allTiles[legals][0] = midle_gray
                                     else:
-                                        allTiles[legals][0] = (183, 65, 56)
+                                        allTiles[legals][0] = light_gray
+                if 825 < mx < 1025:
+                    if 275 < my < 353:
+                        saveLog()
+                        auxWindow(1)
+                if 700 < my < 778:
+                    if 840 < mx < 1017 and Moves != '':
+                        ActionsList.append(Moves)
+                        Moves=''
+                        print(ActionsList)
+                    if 1000 < mx < 1062:
+                        auxWindow(0)
+
 
 
         if event.type == pygame.MOUSEMOTION and not selectedImage == None:
@@ -154,12 +208,6 @@ while not quitGame:
             allPieces[selectedImage][1][0] = mx-50
             allPieces[selectedImage][1][1] = my-50
 
-            # #TODO highlight all legal moves
-            # selectedLegals = allPieces[selectedImage][2].calculateLegalMoves(firstBoard)
-            # for legals in selectedLegals:
-            #     resetColors.append([legals ,allTiles[legals][0]])
-            #
-
 
         if event.type == pygame.MOUSEBUTTONUP:
 
@@ -167,9 +215,6 @@ while not quitGame:
                 allTiles[resets[0]][0] = resets[1]
 
             try:
-
-
-
                 pieceMoves = allPieces[selectedImage][2].calculateLegalMoves(firstBoard)
                 legal = False
                 theMove = 0
@@ -234,13 +279,80 @@ while not quitGame:
             except:
                 pass
 
-            prevy = 0
+            prevy =0
             prevx = 0
             selectedImage = None
 
         #print(event)
 
+        if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    print(Moves)
+                    Moves = ''
+                elif event.key == pygame.K_BACKSPACE:
+                    Moves = Moves[:-1]
+                else:
+                    Moves += event.unicode
+
     gameDisplay.fill((255, 255, 255))
+    pygame.draw.rect(gameDisplay, dark_gray, [800, 25, 2, 800])
+
+
+
+
+    #Axix XY
+    n = 40
+    m = 1
+    for x in axis:
+        img = pygame.image.load("./ChessArt/xy/"+x+".png")
+        img2 = pygame.image.load("./ChessArt/xy/"+str(m)+".png")
+        gameDisplay.blit(img, (n, 0))
+        gameDisplay.blit(img2, (803, n+25))
+        n += 100
+        m+=1
+
+
+    #Buttons
+    gameDisplay.blit(play, (840, 700))
+    gameDisplay.blit(help, (1000, 700))
+    gameDisplay.blit(log, (875, 275))
+
+
+
+    #Text
+    text = font.render('Input a valid move', True, black)
+    textRect = text.get_rect()
+    textRect.center=(950,600)
+    gameDisplay.blit(text, textRect)
+
+
+    #Input move
+    input_box = pygame.Rect(850, 625, 200, 50)
+    txt_surface = font.render(Moves, True, black)
+    gameDisplay.blit(txt_surface, (input_box.x + 5, input_box.y + 10))
+    pygame.draw.rect(gameDisplay, black, input_box, 2)
+
+    # log of moves
+    log_box = pygame.Rect(850, 100, 200, 150)
+    if len(ActionsList)>=3:
+        txt_log_surface_1 = font.render(ActionsList[-1], True, black)
+        txt_log_surface_2 = font.render(ActionsList[-2], True, black)
+        txt_log_surface_3 = font.render(ActionsList[-3], True, black)
+        gameDisplay.blit(txt_log_surface_3, (log_box.x + 5, log_box.y + 5))
+        gameDisplay.blit(txt_log_surface_2, (log_box.x + 5, log_box.y + 45))
+        gameDisplay.blit(txt_log_surface_1, (log_box.x + 5, log_box.y + 85))
+    elif len(ActionsList)== 2:
+        txt_log_surface_1 = font.render(ActionsList[-1], True, black)
+        txt_log_surface_2 = font.render(ActionsList[-2], True, black)
+        gameDisplay.blit(txt_log_surface_2, (log_box.x + 5, log_box.y + 5))
+        gameDisplay.blit(txt_log_surface_1, (log_box.x + 5, log_box.y + 45))
+    elif len(ActionsList)== 1:
+        txt_log_surface_1 = font.render(ActionsList[-1], True, black)
+        gameDisplay.blit(txt_log_surface_1, (log_box.x + 5, log_box.y + 5))
+    else:
+        txt_log_surface = font.render(' ', True, black)
+        gameDisplay.blit(txt_log_surface, (log_box.x + 5, log_box.y + 5))
+    pygame.draw.rect(gameDisplay, black, log_box, 2)
 
     for info in allTiles:
         pygame.draw.rect(gameDisplay, info[0], info[1])
@@ -252,6 +364,9 @@ while not quitGame:
 
     pygame.display.update()
     clock.tick(60)
+
+
+
 
 
 
