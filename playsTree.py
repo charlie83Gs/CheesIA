@@ -36,9 +36,12 @@ class DesicionTree:
         print("getting next move")
         self.player = board.currentPlayer
         print(self.player)
-        bestboard = self.getNextMove(board,-1000000000,100000000, 0).board
+        bestNode = self.getNextMove(board,-1000000000,100000000, 0).board
         print("got next move")
-        return bestboard
+        board = bestNode.board
+        move = bestNode.move
+        value = bestNode.value
+        return board, move, value
 
     #always returns a node object
     def getNextMove(self, board, alpha, beta, level):
