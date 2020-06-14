@@ -65,7 +65,7 @@ class DesicionTree:
                 minmaxNode = self.getNextMove(newboard,alpha,beta,level+1)
                 if(minmaxNode == None):
                     continue
-                newNode = Node(newboard,minmaxNode.value)
+                newNode = Node(newboard,minmaxNode.value,newMove)
                 if(self.isMax(level)):
                     selectedNode = self.getMaxNode(selectedNode, newNode)
                     maxEva = max(maxEva, selectedNode.value)
@@ -110,9 +110,11 @@ class DesicionTree:
 class Node:
     board = None
     value = None
-    def __init__(self,board,value):
+    move = None
+    def __init__(self,board,value, move):
         self.board = board
         self.value = value
+        self.move = move;
 
     def printself(self):
         print(self.board.currentPlayer+ " " + str(self.value))
